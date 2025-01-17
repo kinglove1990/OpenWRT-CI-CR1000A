@@ -6,15 +6,16 @@
 
 # 硬件配置：
 
-CPU: IPQ8072A
-RAM: 2GB
-EMMC: 4GB
-Switch Chip: RTL9303
-10G Chip: 2 x AQC113C
-2.5G Chip:2 x RTL8221B
-Radio 1: QCN5054
-Radio 2: QCN6024 (4x4 5G 4800Mbps)
-Radio 3: QCN9024 (4x4 6G 4800Mbps)
+- CPU: IPQ8072A
+- RAM: 2GB
+- EMMC: 4GB
+- 10G-WAN: AQC113C（USXGMII)
+- Switch Chip: RTL9303(USXGMII)
+- 10G-LAN: AQC113C
+- 2.5G Chip: RTL8221B(lan1、lan2)
+- Radio 1: QCN5054
+- Radio 2: QCN6024 (4x4 5G 4800Mbps)
+- Radio 3: QCN9024 (4x4 6G 4800Mbps)
 
 # 固件问题：
 
@@ -26,7 +27,7 @@ Radio 3: QCN9024 (4x4 6G 4800Mbps)
 
 # 固件简要说明：
 
-- 带HP、Mihomo mosdns等简单几个软件，具体的自己看config
+- 带HP、Mihomo Mosdns等简单几个软件，具体的自己看config
 
 # 目录简要说明：
 
