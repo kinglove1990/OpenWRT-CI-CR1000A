@@ -237,8 +237,6 @@ jobs:
           files: ./wrt/upload/*.*
           body: |
 
-            全系带开源硬件加速，别问了！
-
             内核版本：${{env.WRT_KVER}}
 
             WIFI名称：${{env.WRT_SSID}}
