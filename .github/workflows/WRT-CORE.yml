@@ -64,15 +64,16 @@ jobs:
         uses: actions/checkout@main
 
       - name: Free Disk Space
-        uses: FirelightFlagboy/gh-runner-free-disk-space@main
+        uses: AdityaGarg8/remove-unwanted-software@v5
         with:
-          android: true
-          dotnet: true
-          haskell: true
-          docker-images: true
-          large-packages: true
-          swap-storage: true
-          tool-cache: true
+          remove-dotnet: "true"
+          remove-android: "true"
+          remove-haskell: "true"
+          remove-codeql: "true"
+          remove-docker-images: "true"
+          remove-large-packages: "true"
+          remove-cached-tools: "true"
+          remove-swapfile: "true"
 
       - name: Initialization Environment
         env:
