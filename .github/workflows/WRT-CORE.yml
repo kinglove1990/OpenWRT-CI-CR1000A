@@ -219,6 +219,8 @@ jobs:
             find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
           fi
 
+            make clean -j$(nproc)
+
           echo "WRT_KVER=${KVER:-none}" >> $GITHUB_ENV
 
       - name: Release Firmware
