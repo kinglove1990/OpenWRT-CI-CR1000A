@@ -92,7 +92,7 @@ CONFIG_PACKAGE_openssh-sftp-server=y
 #添加cryptsetup解密cr1000a的p28分区
 CONFIG_PACKAGE_cryptsetup=y
 #添加spidev测试工具
-CONFIG_PACKAGE_spidev-test=y
+#CONFIG_PACKAGE_spidev-test=n
 
 
 
