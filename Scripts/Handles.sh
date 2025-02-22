@@ -79,12 +79,3 @@ if [ -f "$CM_FILE" ]; then
 	sed -i 's/mkdir/mkdir -p/g' $CM_FILE
 	cd $PKG_PATH && echo "coremark has been fixed!"
 fi
-
-# 修复libffi编译失败：移除调用autoreconf的行
-LF_FILES=$(find ../feeds/packages/ -maxdepth 5 -type f -wholename "*/libffi/Makefile")
-for LF_FILE in $LF_FILES; do
-    if [ -f "$LF_FILE" ]; then
-        # 删除包含autoreconf的行（修正正则表达式）
-        sed -i '/\bautoreconf\b/d' "$LF_FILE"
-      cd $PKG_PATH && echo "已修复libffi的Makefile：$LF_FILE"
-fi
