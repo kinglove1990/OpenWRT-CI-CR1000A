@@ -62,8 +62,10 @@ CONFIG_PACKAGE_kmod-nft-nat=y
 CONFIG_PACKAGE_kmod-nft-offload=y
 CONFIG_PACKAGE_kmod-nft-socket=y
 CONFIG_PACKAGE_kmod-nft-tproxy=y
-#添加spidev协助启动RTL9303的控制usrApp
+#添加spidev通过spi控制rtl9303
 CONFIG_PACKAGE_kmod-spi-dev=y
+#添加devmem协助RTL9303的lan口正常工作
+CONFIG_KERNEL_DEVMEM=y
 #组件调整
 CONFIG_PACKAGE_autocore=y
 CONFIG_PACKAGE_automount=y
@@ -91,15 +93,4 @@ CONFIG_PACKAGE_luci-proto-relay=y
 CONFIG_PACKAGE_openssh-sftp-server=y
 #添加cryptsetup解密cr1000a的p28分区
 CONFIG_PACKAGE_cryptsetup=y
-#添加spidev测试工具
-CONFIG_PACKAGE_spidev-test=y
-
-
-
-
-
-
-
-
-
 
