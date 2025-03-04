@@ -232,7 +232,8 @@ jobs:
           tag_name: ${{env.WRT_CONFIG}}_${{env.WRT_VER}}_${{env.WRT_DATE}}
           files: ./wrt/upload/*.*
           body: |
-            CR1000A云编译测试固件！不一定能使用             
+          
+            自用的CR1000A云编译测试固件，可能有些问题！             
         
             内核版本：${{env.WRT_KVER}}
 
