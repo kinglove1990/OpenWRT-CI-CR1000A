@@ -232,8 +232,8 @@ jobs:
           tag_name: ${{env.WRT_CONFIG}}_${{env.WRT_VER}}_${{env.WRT_DATE}}
           files: ./wrt/upload/*.*
           body: |
-            CR1000A云编译固件！             
-            有开源硬件加速！
+          
+            CR1000A云编译自用固件！有开源硬件加速！有问题我也不一定能解决！
 
             内核版本：${{env.WRT_KVER}}
 
