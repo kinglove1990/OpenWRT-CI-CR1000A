@@ -30,7 +30,7 @@
 
 - 9024用的默认驱动，降频5.2g或者5.8G使用，如果想使用6E自己换一下驱动
 - 10gLAN和2.5glan都能用,这三个lan口是通过/lib/rtl/usrApp进行控制，rtl的命令自己找
-- 首次开机rtl9303会记住每个lan口的mac，如果mac发生，需要通过/lib/rtl/usrApp进行重新绑定
+- 首次开机rtl9303会记住每个lan口的mac，如果mac发生变化，需要通过/lib/rtl/usrApp进行重新绑定
 - data分区通过解密，挂载以后可以使用
 - 上述增加的RTL控制APP和data分区的脚本在files文件夹，内容自己看
 
