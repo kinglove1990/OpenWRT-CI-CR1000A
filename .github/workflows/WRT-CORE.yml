@@ -228,7 +228,7 @@ jobs:
           tag_name: ${{env.WRT_CONFIG}}_${{env.WRT_VER}}_${{env.WRT_DATE}}
           files: ./wrt/upload/*.*
           body: |
-             自用CR1000A固件，有问题我也一定能解决！
+             自用CR1000A固件
  
              源码：${{env.WRT_REPO}}
              分支：${{env.WRT_BRANCH}}
