@@ -1,4 +1,3 @@
-
 #云编译公用核心
 name: WRT-CORE
 
@@ -33,7 +32,7 @@ on:
         required: true
         type: string
       WRT_SOURCE:
-        required: false
+        required: true
         type: string
       WRT_PACKAGE:
         required: false
@@ -87,9 +86,9 @@ jobs:
       - name: Initialization Values
         run: |
           echo "WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
-          echo "WRT_MARK=$(echo ${GITHUB_REPOSITORY%%/*} | tr '[:lower:]' '[:upper:]')" >> $GITHUB_ENV
-          echo "WRT_INFO=$(echo ${WRT_SOURCE//\//-} | tr '[:lower:]' '[:upper:]')" >> $GITHUB_ENV
-          echo "WRT_TARGET=$(grep -m 1 -oP '^CONFIG_TARGET_\K[\w]+(?=\=y)' ./Config/$WRT_CONFIG.txt | tr '[:lower:]' '[:upper:]')" >> $GITHUB_ENV
+          echo "WRT_MARK=${GITHUB_REPOSITORY%%/*}" >> $GITHUB_ENV
+          echo "WRT_INFO=${WRT_SOURCE%%/*}" >> $GITHUB_ENV
+          echo "WRT_TARGET=$(grep -m 1 -oP '^CONFIG_TARGET_\K[\w]+(?=\=y)' ./Config/$WRT_CONFIG.txt)" >> $GITHUB_ENV
           echo "WRT_KVER=none" >> $GITHUB_ENV
           echo "WRT_LIST=none" >> $GITHUB_ENV
 
@@ -191,7 +190,7 @@ jobs:
         run: |
           cd ./wrt/
 
-          make -j$(nproc) || make -j$(nproc) V=s
+          make -j$(nproc) || make -j1 V=s
 
       - name: Machine Information
         run: |
@@ -235,11 +234,6 @@ jobs:
           tag_name: ${{env.WRT_CONFIG}}-${{env.WRT_INFO}}-${{env.WRT_BRANCH}}-${{env.WRT_DATE}}
           files: ./wrt/upload/*.*
           body: |
-            这是个平台固件包，内含多个设备！
-            请注意选择你需要的设备固件！
-            不要问，刷就完事了！
-
-            全系带开源硬件加速，别问了！
 
             源码：${{env.WRT_REPO}}
             分支：${{env.WRT_BRANCH}}
